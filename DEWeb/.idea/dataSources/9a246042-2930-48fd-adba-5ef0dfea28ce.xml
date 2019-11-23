@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="TradeDangerous">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.9">
+    <root id="1">
+      <ServerVersion>3.16.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="Added"/>
+    <table id="7" parent="2" name="Category"/>
+    <table id="8" parent="2" name="FDevOutfitting"/>
+    <table id="9" parent="2" name="FDevShipyard"/>
+    <table id="10" parent="2" name="Item"/>
+    <table id="11" parent="2" name="RareItem"/>
+    <table id="12" parent="2" name="Ship"/>
+    <table id="13" parent="2" name="ShipVendor">
+      <WithoutRowId>1</WithoutRowId>
+    </table>
+    <table id="14" parent="2" name="Station"/>
+    <table id="15" parent="2" name="StationItem"/>
+    <table id="16" parent="2" name="System"/>
+    <table id="17" parent="2" name="Upgrade"/>
+    <table id="18" parent="2" name="UpgradeVendor">
+      <WithoutRowId>1</WithoutRowId>
+    </table>
+    <table id="19" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="20" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <view id="21" parent="2" name="StationBuying"/>
+    <view id="22" parent="2" name="StationSelling"/>
+    <column id="23" parent="6" name="added_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="6" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <index id="25" parent="6" name="sqlite_autoindex_Added_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="6">
+      <ColNames>added_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="27" parent="6">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Added_1</UnderlyingIndexName>
+    </key>
+    <column id="28" parent="7" name="category_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="29" parent="7" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <index id="30" parent="7" name="sqlite_autoindex_Category_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>category_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="7">
+      <ColNames>category_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Category_1</UnderlyingIndexName>
+    </key>
+    <key id="32" parent="7">
+      <ColNames>category_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Category_1</UnderlyingIndexName>
+    </key>
+    <column id="33" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="8" name="symbol">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+    </column>
+    <column id="35" parent="8" name="category">
+      <Position>3</Position>
+      <DataType>CHAR(10)|0s</DataType>
+    </column>
+    <column id="36" parent="8" name="name">
+      <Position>4</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="37" parent="8" name="mount">
+      <Position>5</Position>
+      <DataType>CHAR(10)|0s</DataType>
+    </column>
+    <column id="38" parent="8" name="guidance">
+      <Position>6</Position>
+      <DataType>CHAR(10)|0s</DataType>
+    </column>
+    <column id="39" parent="8" name="ship">
+      <Position>7</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="40" parent="8" name="class">
+      <Position>8</Position>
+      <DataType>CHAR(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="8" name="rating">
+      <Position>9</Position>
+      <DataType>CHAR(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="8" name="entitlement">
+      <Position>10</Position>
+      <DataType>CHAR(10)|0s</DataType>
+    </column>
+    <index id="43" parent="8" name="sqlite_autoindex_FDevOutfitting_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="8">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_FDevOutfitting_1</UnderlyingIndexName>
+    </key>
+    <check id="45" parent="8">
+      <Predicate>category IN (&apos;hardpoint&apos;,&apos;internal&apos;,&apos;standard&apos;,&apos;utility&apos;)</Predicate>
+    </check>
+    <check id="46" parent="8">
+      <Predicate>guidance IN (NULL, &apos;Dumbfire&apos;,&apos;Seeker&apos;,&apos;Swarm&apos;)</Predicate>
+    </check>
+    <check id="47" parent="8">
+      <Predicate>mount IN (NULL, &apos;Fixed&apos;,&apos;Gimballed&apos;,&apos;Turreted&apos;)</Predicate>
+    </check>
+    <column id="48" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="9" name="symbol">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+    </column>
+    <column id="50" parent="9" name="name">
+      <Position>3</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <index id="51" parent="9" name="sqlite_autoindex_FDevShipyard_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="9">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_FDevShipyard_1</UnderlyingIndexName>
+    </key>
+    <column id="53" parent="10" name="item_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="54" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="55" parent="10" name="category_id">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="10" name="ui_order">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="57" parent="10" name="avg_price">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="58" parent="10" name="fdev_id">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="59" parent="10" name="sqlite_autoindex_Item_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>item_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="60" parent="10" name="sqlite_autoindex_Item_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>fdev_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="61" parent="10" name="idx_item_by_fdev_id">
+      <ColNames>fdev_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="62" parent="10">
+      <ColNames>item_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Item_1</UnderlyingIndexName>
+    </key>
+    <key id="63" parent="10">
+      <ColNames>item_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Item_1</UnderlyingIndexName>
+    </key>
+    <key id="64" parent="10">
+      <ColNames>fdev_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Item_2</UnderlyingIndexName>
+    </key>
+    <foreign-key id="65" parent="10">
+      <ColNames>category_id</ColNames>
+      <RefTableName>Category</RefTableName>
+      <RefColNames>category_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="66" parent="11" name="rare_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="67" parent="11" name="station_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="11" name="category_id">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="11" name="name">
+      <Position>4</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="70" parent="11" name="cost">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="71" parent="11" name="max_allocation">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="72" parent="11" name="illegal">
+      <Position>7</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="73" parent="11" name="suppressed">
+      <Position>8</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <index id="74" parent="11" name="sqlite_autoindex_RareItem_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="75" parent="11">
+      <ColNames>rare_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="76" parent="11">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_RareItem_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="77" parent="11">
+      <ColNames>station_id</ColNames>
+      <RefTableName>Station</RefTableName>
+      <RefColNames>station_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="78" parent="11">
+      <ColNames>category_id</ColNames>
+      <RefTableName>Category</RefTableName>
+      <RefColNames>category_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <check id="79" parent="11">
+      <Predicate>illegal IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="80" parent="11">
+      <Predicate>suppressed IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <column id="81" parent="12" name="ship_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="82" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="83" parent="12" name="cost">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="12" name="fdev_id">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="85" parent="12" name="sqlite_autoindex_Ship_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ship_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="86" parent="12">
+      <ColNames>ship_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Ship_1</UnderlyingIndexName>
+    </key>
+    <key id="87" parent="12">
+      <ColNames>ship_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Ship_1</UnderlyingIndexName>
+    </key>
+    <column id="88" parent="13" name="ship_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="13" name="station_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="13" name="modified">
+      <Position>3</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="91" parent="13" name="sqlite_autoindex_ShipVendor_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ship_id
+station_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="92" parent="13">
+      <ColNames>ship_id
+station_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_ShipVendor_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="93" parent="13">
+      <ColNames>ship_id</ColNames>
+      <RefTableName>Ship</RefTableName>
+      <RefColNames>ship_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="94" parent="13">
+      <ColNames>station_id</ColNames>
+      <RefTableName>Station</RefTableName>
+      <RefColNames>station_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="95" parent="14" name="station_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="96" parent="14" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="97" parent="14" name="system_id">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="98" parent="14" name="ls_from_star">
+      <Position>4</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <column id="99" parent="14" name="blackmarket">
+      <Position>5</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="100" parent="14" name="max_pad_size">
+      <Position>6</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="101" parent="14" name="market">
+      <Position>7</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="102" parent="14" name="shipyard">
+      <Position>8</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="103" parent="14" name="modified">
+      <Position>9</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="104" parent="14" name="outfitting">
+      <Position>10</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="105" parent="14" name="rearm">
+      <Position>11</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="106" parent="14" name="refuel">
+      <Position>12</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="107" parent="14" name="repair">
+      <Position>13</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="108" parent="14" name="planetary">
+      <Position>14</Position>
+      <DataType>TEXT(1)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;?&apos;</DefaultExpression>
+    </column>
+    <column id="109" parent="14" name="type_id">
+      <Position>15</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="110" parent="14" name="sqlite_autoindex_Station_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>station_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="111" parent="14" name="idx_station_by_name">
+      <ColNames>name</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="112" parent="14" name="idx_station_by_system">
+      <ColNames>system_id
+station_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="113" parent="14">
+      <ColNames>station_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Station_1</UnderlyingIndexName>
+    </key>
+    <key id="114" parent="14">
+      <ColNames>station_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Station_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="115" parent="14">
+      <ColNames>system_id</ColNames>
+      <RefTableName>System</RefTableName>
+      <RefColNames>system_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <check id="116" parent="14">
+      <Predicate>blackmarket IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="117" parent="14">
+      <Predicate>ls_from_star &gt;= 0</Predicate>
+    </check>
+    <check id="118" parent="14">
+      <Predicate>market IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="119" parent="14">
+      <Predicate>max_pad_size IN (&apos;?&apos;, &apos;S&apos;, &apos;M&apos;, &apos;L&apos;)</Predicate>
+    </check>
+    <check id="120" parent="14">
+      <Predicate>outfitting IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="121" parent="14">
+      <Predicate>planetary  IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="122" parent="14">
+      <Predicate>rearm      IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="123" parent="14">
+      <Predicate>refuel     IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="124" parent="14">
+      <Predicate>repair     IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <check id="125" parent="14">
+      <Predicate>shipyard IN (&apos;?&apos;, &apos;Y&apos;, &apos;N&apos;)</Predicate>
+    </check>
+    <column id="126" parent="15" name="station_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="15" name="item_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="128" parent="15" name="demand_price">
+      <Position>3</Position>
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="15" name="demand_units">
+      <Position>4</Position>
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="130" parent="15" name="demand_level">
+      <Position>5</Position>
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="131" parent="15" name="supply_price">
+      <Position>6</Position>
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="132" parent="15" name="supply_units">
+      <Position>7</Position>
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="15" name="supply_level">
+      <Position>8</Position>
+      <DataType>INT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="15" name="modified">
+      <Position>9</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="135" parent="15" name="from_live">
+      <Position>10</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="136" parent="15" name="sqlite_autoindex_StationItem_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>station_id
+item_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="137" parent="15" name="si_itm_dmdpr">
+      <ColNames>item_id
+demand_price</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Condition>demand_price &gt; 0</Condition>
+    </index>
+    <index id="138" parent="15" name="si_itm_suppr">
+      <ColNames>item_id
+supply_price</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Condition>supply_price &gt; 0</Condition>
+    </index>
+    <index id="139" parent="15" name="si_mod_stn_itm">
+      <ColNames>modified
+station_id
+item_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="140" parent="15">
+      <ColNames>station_id
+item_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_StationItem_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="141" parent="15">
+      <ColNames>station_id</ColNames>
+      <RefTableName>Station</RefTableName>
+      <RefColNames>station_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="142" parent="15">
+      <ColNames>item_id</ColNames>
+      <RefTableName>Item</RefTableName>
+      <RefColNames>item_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="143" parent="16" name="system_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="144" parent="16" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="145" parent="16" name="pos_x">
+      <Position>3</Position>
+      <DataType>DOUBLE|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="146" parent="16" name="pos_y">
+      <Position>4</Position>
+      <DataType>DOUBLE|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="147" parent="16" name="pos_z">
+      <Position>5</Position>
+      <DataType>DOUBLE|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="148" parent="16" name="added_id">
+      <Position>6</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="149" parent="16" name="modified">
+      <Position>7</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="150" parent="16" name="sqlite_autoindex_System_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>system_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="151" parent="16" name="idx_system_by_pos">
+      <ColNames>pos_x
+pos_y
+pos_z
+system_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="152" parent="16">
+      <ColNames>system_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_System_1</UnderlyingIndexName>
+    </key>
+    <key id="153" parent="16">
+      <ColNames>system_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_System_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="154" parent="16">
+      <ColNames>added_id</ColNames>
+      <RefTableName>Added</RefTableName>
+      <RefColNames>added_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="155" parent="17" name="upgrade_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="156" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|0s</DataType>
+      <Collation>NOCASE</Collation>
+    </column>
+    <column id="157" parent="17" name="weight">
+      <Position>3</Position>
+      <DataType>NUMBER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="158" parent="17" name="cost">
+      <Position>4</Position>
+      <DataType>NUMBER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="159" parent="17" name="sqlite_autoindex_Upgrade_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>upgrade_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="160" parent="17">
+      <ColNames>upgrade_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_Upgrade_1</UnderlyingIndexName>
+    </key>
+    <key id="161" parent="17">
+      <ColNames>upgrade_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_Upgrade_1</UnderlyingIndexName>
+    </key>
+    <column id="162" parent="18" name="upgrade_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="163" parent="18" name="station_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="164" parent="18" name="cost">
+      <Position>3</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="165" parent="18" name="modified">
+      <Position>4</Position>
+      <DataType>DATETIME|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="166" parent="18" name="sqlite_autoindex_UpgradeVendor_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>upgrade_id
+station_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="167" parent="18" name="idx_vendor_by_station_id">
+      <ColNames>station_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="168" parent="18">
+      <ColNames>upgrade_id
+station_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_UpgradeVendor_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="169" parent="18">
+      <ColNames>upgrade_id</ColNames>
+      <RefTableName>Upgrade</RefTableName>
+      <RefColNames>upgrade_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <foreign-key id="170" parent="18">
+      <ColNames>station_id</ColNames>
+      <RefTableName>Station</RefTableName>
+      <RefColNames>station_id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+    <column id="171" parent="19" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="172" parent="19" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="173" parent="19" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="174" parent="19" name="rootpage">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="175" parent="19" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="176" parent="20" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="177" parent="20" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="178" parent="21" name="station_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="179" parent="21" name="item_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="180" parent="21" name="price">
+      <Position>3</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <column id="181" parent="21" name="units">
+      <Position>4</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <column id="182" parent="21" name="level">
+      <Position>5</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <column id="183" parent="21" name="modified">
+      <Position>6</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="184" parent="22" name="station_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="185" parent="22" name="item_id">
+      <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="186" parent="22" name="price">
+      <Position>3</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <column id="187" parent="22" name="units">
+      <Position>4</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <column id="188" parent="22" name="level">
+      <Position>5</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <column id="189" parent="22" name="modified">
+      <Position>6</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>

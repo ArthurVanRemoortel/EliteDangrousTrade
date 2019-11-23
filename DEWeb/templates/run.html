@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% load bootstrap4 %}
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body style="padding-top: 100px">
+    <div class="container">
+        <form class="form-group" method="post">
+            {% csrf_token %}
+            Force command
+            <div style="height: 10px;"></div>
+            <div class="form-group row ml-0 mr-0">
+                {% render_field form.forced_command class="form-control" id="force_command_input" placeholder="Command"%}
+{#                <input type="password" class="form-control" id="inputPassword4" placeholder="Command">#}
+            </div>
+
+            <hr class="line">
+            Filter
+            <div style="height: 10px;"></div>
+
+            <div class="form-group row ml-0">
+                <button type="button" class="btn btn-secondary col-sm-2">From</button>
+                <div class="input-group col-sm-5">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">System</div>
+                    </div>
+                    {% render_field form.from_system class="form-control" id="from_system" %}
+{#                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+                </div>
+                <div class="input-group col-sm-5">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Station</div>
+                    </div>
+                    {% render_field form.from_station class="form-control" id="from_stattion" %}
+{#                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+                </div>
+            </div>
+
+            <div class="form-group row ml-0">
+                {% render_field form.to_type class="custom-select col-sm-2" id="from_type" %}
+{#                <select class="custom-select col-sm-2" id="inlineFormCustomSelect">#}
+{#                    <option selected>To</option>#}
+{#                    <option value="2">Towards</option>#}
+{#                </select>#}
+                <div class="input-group col-sm-5">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">System</div>
+                    </div>
+                    {% render_field form.to_system class="form-control" id="to_system" %}
+{#                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+                </div>
+                <div class="input-group col-sm-5">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Station</div>
+                    </div>
+                    {% render_field form.to_station class="form-control" id="to_station" %}
+{#                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+                </div>
+            </div>
+
+            <div class="form-group row ml-0">
+                <button type="button" class="btn btn-secondary col-sm-2">Via</button>
+                <div class="input-group col-sm-5">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">System</div>
+                    </div>
+                    {% render_field form.via_station class="form-control" id="via_system" %}
+{#                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+                </div>
+                <div class="input-group col-sm-5">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Station</div>
+                    </div>
+                    {% render_field form.via_system class="form-control" id="via_station" %}
+{#                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">#}
+                </div>
+            </div>
+
+            <hr>
+            Options
+            <div style="height: 10px;"></div>
+
+            <div class="form-group row">
+                <div class="input-group col-sm-4">
+                    {% render_field form.hops_type class="input-group-prepend custom-select col-sm-4" id="hopsTypeSelect" %}
+{#                    <select class="input-group-prepend custom-select col-sm-4" id="inlineFormCustomSelect">#}
+{#                        <option selected>Hops</option>#}
+{#                        <option value="2">Direct</option>#}
+{#                    </select>#}
+                    {% render_field form.hops_n class="form-control" id="hopsInput" %}
+{#                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="#hops" placeholder="# of hops">#}
+                </div>
+                <div class="input-group col-sm-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            {% render_field form.do_loop id="doLoop" %}
+{#                            <input type="checkbox" aria-label="Checkbox for following text input">#}
+                        </div>
+                    </div>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Loops #</div>
+                    </div>
+                    {% render_field form.loop_n class="form-control" id="loopInput" %}
+{#                    <input type="password" class="form-control" id="inputPassword4">#}
+                </div>
+
+                <div class="input-group col-sm-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">End Jumps</div>
+                    </div>
+                    {% render_field form.end_jumps class="form-control" id="endJumps" %}
+{#                    <input type="password" class="form-control" id="inputPassword4">#}
+                </div>
+            </div>
+            <hr>
+            Ship
+            <div style="height: 10px;"></div>
+            <div class="form-group row">
+                <div class="input-group col-sm-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Credits</div>
+                    </div>
+                    {% render_field form.credits class="form-control" id="loopInput" placeholder="Budget" %}
+{#                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Budget">#}
+                    <div class="input-group-append">
+                        <div class="input-group-text">CR</div>
+                    </div>
+                </div>
+                <div class="input-group col-sm-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Cargo</div>
+                    </div>
+                    {% render_field form.cargo class="form-control" id="loopInput" placeholder="Cargo Size" %}
+{#                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Cargo size">#}
+                </div>
+                <div class="input-group col-sm-4">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">ly</div>
+                    </div>
+                    {% render_field form.ly class="form-control" id="loopInput" placeholder="ly per jump" %}
+{#                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="ly per jump">#}
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-primary">Run</button>
+            <br>
+            <hr>
+            <br>
+            {% for line in routes_rows %}
+                <p>
+                {{ line }}<br />
+                </p>
+            {% endfor %}
+        </form>
+    </div>
+    </body>
+    </html>
+{% endblock %}

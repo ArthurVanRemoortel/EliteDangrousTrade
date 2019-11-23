@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <body style="padding-top: 100px">
+    <div class="container">
+        <table class="table table-hover table-sm">
+            <thead class="">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Avg. Buy</th>
+                <th scope="col">Avg. Sell</th>
+                <th scope="col">Min. Buy</th>
+                <th scope="col">Max. Sell</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for item in items %}
+                <tr>
+                    <th scope="row">
+                        <a href="/web/items/{{ item.id }}">{{ item.name }}</a>
+                    </th>
+
+                    <td>{{ item.avg_buying }}</td>
+                    <td>{{ item.avg_selling }}</td>
+                    <td>/</td>
+                    <td>/</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </body>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+.body{
+    background-color: red ;
+}
+
+.commodity-overview .overview-row {
+  display: flex;
+  flex-wrap: wrap; }
+  .commodity-overview .overview-row .overview-icon {
+    width: 25px;
+    text-align: center; }
+  .commodity-overview .overview-row .overview-label {
+    width: 180px; }
+  .commodity-overview .overview-row .overview-value {
+    width: 100px;
+    font-weight: 600; }
+  .commodity-overview .overview-row .overview-system {
+    width: 200px; }
+  .commodity-overview .overview-row .overview-station {
+    flex: 1;
+  }

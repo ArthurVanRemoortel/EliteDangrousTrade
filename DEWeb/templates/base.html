@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    {% block extrahead %}
+    {% endblock %}
+
+    <title>Title</title>
+
+    <style>
+        .commodity-overview .overview-row {
+            display: flex;
+            flex-wrap: wrap; }
+        .commodity-overview .overview-row .overview-icon {
+            width: 25px;
+            text-align: center; }
+        .commodity-overview .overview-row .overview-label {
+            width: 180px; }
+        .commodity-overview .overview-row .overview-value {
+            width: 100px;
+            font-weight: 600; }
+        .commodity-overview .overview-row .overview-system {
+            width: 200px; }
+        .commodity-overview .overview-row .overview-station {
+            flex: 1; }
+    </style>
+</head>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="{% url 'main' %}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'run' %}">Run</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'items' %}">Items</a>
+        </li>
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

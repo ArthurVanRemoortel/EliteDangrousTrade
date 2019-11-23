@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <body style="padding-top: 100px">
+    <div class="container">
+
+        <h1>{{ item }}</h1>
+        <div class="card">
+            <div class="card-header">
+                Summary
+            </div>
+            <div class="card-body">
+                <div class="commodity-overview">
+                    <div class="overview-row">
+                        <div class="overview-icon">Ø</div>
+                        <div class="overview-label">Average Price:</div>
+                        <div class="overview-value number">{{ item.avgPrice }} CR</div>
+                    </div>
+                    <div class="overview-row">
+                        <div class="overview-icon"><i class="fa fa-arrow-down"></i></div>
+                        <div class="overview-label">Minimum buy price:</div>
+                        <div class="overview-value number">-</div>
+                    </div>
+                    <div class="overview-row">
+                        <div class="overview-icon"><i class="fa fa-arrow-up"></i></div>
+                        <div class="overview-label">Maximum sell price:</div>
+                        <div class="overview-value number">{{ item.avg_selling }} ?? CR</div>
+{#                        <div class="overview-system"><i class="fa fa-building-o"></i> <strong><a href="/station/4349">Altman Holdings</a></strong></div>#}
+{#                        <div class="overview-station"><i class="fa fa-dot-circle-o"></i> <strong><a href="/system/5040">Gamma Leporis</a></strong></div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Filter
+            </div>
+            <div class="card-body">
+                <form class="form-group" method="post">
+                    {% csrf_token %}
+                    <div class="form-group row ml-0 mr-0">
+                        {% render_field form.from_system class="form-control" list="systems" id="from_system" placeholder="System"%}
+                        <datalist id="systems">
+                            {% for system in all_systems %}
+                                <option value="{{ system.name }}">
+                            {% endfor %}
+                        </datalist>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Run</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Selling
+            </div>
+            <div class="card-body">
+                <table class="table table-hover table-sm">
+                    <thead class="">
+                    <tr>
+                        <th scope="col">Station</th>
+                        <th scope="col">System</th>
+                        <th scope="col">Buy</th>
+                        <th scope="col">Sell</th>
+                        <th scope="col">Pad</th>
+                        <th scope="col">Distance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for row in rows %}
+                        <tr>
+                            <td>
+                                {{ row.station.dbname }}
+                            </td>
+
+                            <td>{{ row.station.system.dbname }}</td>
+                            <td>Buy</td>
+                            <td>{{ row.price }}</td>
+                            <td>Pad</td>
+                            <td>{{ row.dist }} ly</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    </body>
+{% endblock %}
+
