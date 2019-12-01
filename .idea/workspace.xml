@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d78671d7-8ade-4ce7-a269-2b1e07fe2f80" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py" beforeDir="false" afterPath="$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EliteDangrousTrade$autoUpdater__1_.coverage" NAME="autoUpdater (1) Coverage Results" MODIFIED="1575208556037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DEWeb/Trade-Dangerous" />
+    <SUITE FILE_PATH="coverage/EliteDangrousTrade$autoUpdater__1_.coverage" NAME="autoUpdater (1) Coverage Results" MODIFIED="1575209894338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DEWeb/Trade-Dangerous" />
     <SUITE FILE_PATH="coverage/EliteDangrousTrade$autoUpdater.coverage" NAME="autoUpdater Coverage Results" MODIFIED="1575205802921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DBAutoUpdater" />
   </component>
   <component name="FileEditorManager">
@@ -21,11 +20,8 @@
       <file leaf-file-name="autoUpdater.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="297">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -39,6 +35,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>trade.py</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -49,6 +50,7 @@
         <option value="$PROJECT_DIR$/DEWeb/TradeDangerous/trade.py" />
         <option value="$PROJECT_DIR$/DEWeb/Trade-Dangerous/trade.py" />
         <option value="$PROJECT_DIR$/DEWeb/Trade-Dangerous/__init__.py" />
+        <option value="$PROJECT_DIR$/DEWeb/Trade-Dangerous/init.py" />
         <option value="$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py" />
       </list>
     </option>
@@ -196,9 +198,9 @@
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952926" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28815976" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28673324" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25415283" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -218,6 +220,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -253,13 +281,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DEWeb/Trade-Dangerous/init.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="297">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
     </entry>
