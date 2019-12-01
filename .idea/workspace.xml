@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d78671d7-8ade-4ce7-a269-2b1e07fe2f80" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBAutoUpdater/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBAutoUpdater/autoUpdater.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DEWeb/Trade-Dangerous/trade.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py" beforeDir="false" afterPath="$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EliteDangrousTrade$autoUpdater__1_.coverage" NAME="autoUpdater (1) Coverage Results" MODIFIED="1575207865432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DEWeb/Trade-Dangerous" />
+    <SUITE FILE_PATH="coverage/EliteDangrousTrade$autoUpdater__1_.coverage" NAME="autoUpdater (1) Coverage Results" MODIFIED="1575208556037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DEWeb/Trade-Dangerous" />
     <SUITE FILE_PATH="coverage/EliteDangrousTrade$autoUpdater.coverage" NAME="autoUpdater Coverage Results" MODIFIED="1575205802921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DBAutoUpdater" />
   </component>
   <component name="FileEditorManager">
@@ -23,8 +21,8 @@
       <file leaf-file-name="autoUpdater.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            <state relative-caret-position="184">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -257,8 +255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DEWeb/Trade-Dangerous/autoUpdater.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="184">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
